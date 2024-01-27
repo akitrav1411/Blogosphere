@@ -1,0 +1,126 @@
+.login-container {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem 5rem;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  margin: 0 auto;
+}
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--whiteBg);
+  max-width: 40rem;
+  border-radius: 2rem;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  box-shadow: 0 0 10px 0px var(--box-shadow);
+}
+.form-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 1rem;
+}
+.heading {
+  font-size: 7rem;
+  color: var(--maincolor);
+  padding: 1rem 0;
+}
+.tagline {
+  color: var(--taglinecolor);
+  font-size: 1.5rem;
+}
+.input-container {
+  padding: 1.4rem;
+  color: var(--inputcolorval);
+  font-size: 1.5rem;
+  border: none;
+  width: 100%;
+  outline: 0;
+  border-bottom: 1px solid var(--maincolor);
+}
+
+.input-container::placeholder {
+  font-size: 2rem;
+  color: var(--inputcolor);
+  text-transform: capitalize;
+}
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.8rem;
+  justify-content: center;
+  width: 100%;
+}
+.error-message {
+  color: var(--error);
+  font-size: 1.3rem;
+  padding: 1rem 0.5rem;
+}
+.login-heading {
+  font-size: 4.5rem;
+  color: var(--taglinecolor);
+}
+.login-button {
+  border: none;
+}
+
+.name-container {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  width: 100%;
+  align-items: flex-start;
+}
+.question {
+  padding: 1rem;
+  color: var(--taglinecolor);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+@media (max-width: 869px) {
+  .login-container {
+    flex-direction: column;
+    gap: 5rem;
+    padding: 2rem 1rem;
+  }
+  .form-container {
+    width: 100%;
+    justify-content: center;
+    max-width: 30rem;
+    max-height: 75%;
+  }
+  .heading {
+    font-size: 3rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+  .input-container::placeholder {
+    font-size: 1.5rem;
+    color: var(--inputcolor);
+  }
+}
+@media (max-width: 576px) {
+  .name-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .question {
+    text-align: center;
+  }
+  .tagline{
+    text-align: center;
+  }
+}

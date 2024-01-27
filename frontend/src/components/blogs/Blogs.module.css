@@ -1,0 +1,23 @@
+.blogs-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.8rem;
+}
+.trending {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+}
+.blogs {
+  display: flex;
+  gap: 1rem;
+}
+.number {
+  font-size: 5rem;
+  color: var(--lightTextColor);
+}

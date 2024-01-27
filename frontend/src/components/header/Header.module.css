@@ -1,0 +1,18 @@
+.header-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: fit-content;
+}
+.heading {
+  color: var(--maincolor);
+  font-size: 3rem;
+}
+.icon {
+  width: 5rem;
+}
+@media (max-width: 896px) {
+  .heading {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,7 @@
+.notFound-container {
+  margin: 0 auto;
+}
+.heading {
+  color: var(--lightTextColor);
+  margin: 5rem 0;
+}

@@ -1,0 +1,18 @@
+.parent-container {
+  display: flex;
+  gap: 10rem;
+  padding: 2rem;
+}
+.allblogs {
+  display: flex;
+  gap: 2rem;
+  flex: 0.7;
+  flex-direction: column;
+}
+
+@media (max-width: 869px) {
+  .parent-container {
+    flex-direction: column-reverse;
+    gap: 3rem;
+  }
+}

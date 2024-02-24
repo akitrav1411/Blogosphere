@@ -1,0 +1,50 @@
+.pop-up {
+  display: none;
+}
+.onpop-up {
+  display: none;
+}
+@media (max-width: 869px) {
+  @keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-2.5rem);
+    }
+    60% {
+      transform: translateY(-1.5rem);
+    }
+  }
+  .pop-up {
+    display: block;
+    --dimension: 6rem;
+    width: var(--dimension);
+    height: var(--dimension);
+    padding: 1rem;
+    cursor: pointer;
+    background-color: var(--navbarBg);
+    border-radius: 1rem;
+    animation: bounce 3s ease-in-out infinite;
+  }
+  .buttons {
+    border: none;
+    width: 100%;
+  }
+  .onpop-up {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.5rem;
+    background-color: var(--navbarBg);
+    padding: 2rem 2.5rem;
+    border-radius: 1rem;
+  }
+  .cross-img {
+    width: 2rem;
+  }
+}

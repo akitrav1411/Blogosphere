@@ -1,0 +1,74 @@
+.form-container {
+  height: calc(100vh - 76px);
+}
+.input-container {
+  flex: 1;
+  padding: 1.4rem;
+  color: var(--inputcolorval);
+  font-size: 1.5rem;
+  border: 1px solid var(--maincolor);
+  border-radius: 0.5rem;
+}
+
+.upload {
+  flex: 1;
+  background-color: var(--imageBg);
+  border-radius: 0.5rem;
+  display: flex;
+}
+.textarea {
+  height: 100%;
+  overflow: auto;
+}
+
+.file-upload {
+  display: flex;
+  justify-content: space-between;
+}
+.input-container::placeholder {
+  font-size: 2rem;
+  color: var(--inputcolor);
+}
+.button-container {
+  display: flex;
+  gap: 1rem;
+  float: right;
+  justify-content: flex-end;
+}
+.title-image {
+  display: flex;
+  justify-content: space-between;
+  height: 15rem;
+  gap: 1rem;
+}
+.form-content {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 50%;
+  gap: 1rem;
+  height: 80%;
+  margin: 0 auto;
+}
+.error-message {
+  color: var(--error);
+  font-size: 1.3rem;
+  padding: 1rem 0.5rem;
+}
+.button {
+  border: none;
+}
+.imageUpload {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--inputcolorval);
+  text-align: center;
+}
+@media (max-width: 699px) {
+  .form-content {
+    width: 100%;
+  }
+  .button-container {
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,25 @@
+.handle-btns {
+  display: flex;
+  justify-content: space-between;
+}
+.handle-btns button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.handle-btns .enabled {
+  color: var(--maincolor);
+}
+.handle-btns p {
+  background-color: var(--maincolor);
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: var(--bg-color);
+  font-weight: 600;
+}

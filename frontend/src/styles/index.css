@@ -1,0 +1,38 @@
+:root {
+  --maincolor: #967e76;
+  --bg-color: #faf8f1;
+  --taglinecolor: #a2908a;
+  --inputcolor: #c5bab8;
+  --inputcolorval: #ad8b73;
+  --whiteBg: #fff;
+  --error: rgba(163, 19, 19, 0.806);
+  --navbarBg: #d6c7ae;
+  --blogCardBg: #f6f1e9;
+  --toastify-toast-width: 320px;
+  --lightTextColor: rgba(56, 56, 56, 0.194);
+  --shadow: rgb(113 109 109 / 90%);
+  --box-shadow: rgba(150, 126, 118, 0.5);
+  --overlayBg: rgba(0, 0, 0, 0.271);
+  --tagsBtnBg: #dadadc52;
+  --blackText: "#000000";
+  --imageBg: #e1d8d5;
+  --profileBg: #e6e3de;
+
+  /* --breakpoint-sm: 576px;
+  --breakpoint-md: 876px;
+  --breakpoint-lg: 1076px;
+  --breakpoint-xl: 1446px; */
+}
+.position-bottom-right {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+input[type="checkbox"] {
+  width: 2rem;
+  height: 2rem;
+}
+input[type="file"] {
+  width: fit-content;
+  border: none;
+}

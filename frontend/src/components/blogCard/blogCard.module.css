@@ -1,0 +1,121 @@
+.blog-img {
+  margin: 0 auto;
+  width: 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.blog-card {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--blogCardBg);
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  display: flex;
+  gap: 1.4rem;
+  box-shadow: 0px 5px 7px var(--shadow);
+  color: var(--maincolor);
+}
+.column {
+  flex-direction: column;
+  width: 100%;
+}
+.column .tags-container {
+  margin: 1rem;
+}
+.column .blog-img {
+  height: 25rem;
+  width: 100%;
+}
+.blog-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.content {
+  word-break: break-all;
+  margin: 1rem 1rem;
+  flex: 1;
+  text-align: left;
+  font-size: 1.8rem;
+}
+.title-read {
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+}
+.btnContainer {
+  display: flex;
+  gap: 1rem;
+  text-align: right;
+  justify-content: space-between;
+}
+.three-dots {
+  position: relative;
+  width: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.three-dots p {
+  text-align: left;
+  padding: 0.5rem;
+}
+.title {
+  font-size: 2.5rem;
+}
+.username {
+  font-size: 2rem;
+}
+.info {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1rem 0.5rem;
+  align-items: center;
+}
+.dropdown {
+  position: absolute;
+  bottom: 0;
+  right: 80%;
+  background-color: var(--maincolor);
+  color: var(--whiteBg);
+  padding: 1rem;
+  background-color: var(--shadow);
+  border-radius: 0.5rem;
+}
+.read-morebtn {
+  width: fit-content;
+  border: none;
+}
+.info .btn p {
+  color: var(--maincolor);
+}
+.info .btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.info .btn .info-img {
+  width: 3rem;
+}
+@media (max-width: 869px) {
+  .blog-card {
+    flex-direction: column;
+    flex: 1;
+  }
+  .blog-img {
+    height: 25rem;
+    width: 100%;
+  }
+}
+@media (min-width: 870px) {
+  .column {
+    max-width: 35rem;
+  }
+}

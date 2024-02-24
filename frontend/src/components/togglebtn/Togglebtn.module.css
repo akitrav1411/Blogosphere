@@ -1,0 +1,17 @@
+.toggle-btn {
+  margin: 0.5rem;
+  border: 2px solid var(--maincolor);
+}
+.toggle-btn.active {
+  background-color: var(--taglinecolor);
+  color: var(--whiteBg);
+}
+@media (max-width: 569px) {
+  .toggle-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .toggle-container button {
+    flex: 1;
+  }
+}

@@ -1,16 +1,10 @@
-// const generateUniqueUserIds = (userIds = []) => {
-//   const [idx1, idx2] = [
-//     Math.floor(Math.random() * userIds.length),
-//     Math.floor(Math.random() * userIds.length),
-//   ];
-//   return userIds.slice(Math.min(idx1, idx2), Math.max(idx1, idx2));
-// };
+
 const generateUniqueIds = (arr = []) => {
   const [indx1, indx2] = [
     Math.floor(Math.random() * arr.length),
     Math.floor(Math.random() * arr.length),
   ];
-  return tagIds.slice(Math.min(indx1, indx2), Math.max(indx1, indx2));
+  return arr.slice(Math.min(indx1, indx2), Math.max(indx1, indx2));
 };
 const dummyBlogGenerator = (
   blogCount = 10,

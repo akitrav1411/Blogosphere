@@ -9,13 +9,13 @@
 .navbar-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .navbar-tags {
   text-decoration: none;
   font-size: 2rem;
   color: var(--maincolor);
-  /* color: var(--bg-color); */
   font-weight: 600;
   transition: font-size 0.3s ease;
 }

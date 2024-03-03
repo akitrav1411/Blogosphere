@@ -143,7 +143,6 @@ const createBlog = async (req) => {
     const { body, user } = req;
     const { _id } = user;
     const { title, content, isPublished, isDeleted, image, tags } = body;
-    // console.log(image);
     const newBlog = new Blog({
       title,
       content,

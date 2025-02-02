@@ -16,6 +16,7 @@ const blogsSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Users",
   },
+
   createdAt: Date,
   content: {
     type: String,

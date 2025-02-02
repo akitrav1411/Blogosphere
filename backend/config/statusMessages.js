@@ -21,4 +21,7 @@ export const statusMessages = {
   FETCH_SINGLE_BLOG_FAILURE: "Error in fetching data for single blog",
   //Messages related to tags
   TAGS_FAILURE: "Error in getting all the tags",
+
+  //Messages related to comments
+  COMMENT_SAVE_FAILURE: "Failed to create a comment",
 };

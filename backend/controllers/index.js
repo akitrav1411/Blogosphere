@@ -7,3 +7,4 @@ export {
   getBlogDataById,
 } from "./blogsController.js";
 export * from "./tagsController.js";
+export * from "./commentsController.js"

@@ -52,6 +52,8 @@ export const saveBlogsToDb = createAsyncThunk(
     }
   }
 );
+
+
 const blogSlice = createSlice({
   name: "Blogs",
   initialState: {
@@ -87,7 +89,6 @@ const blogSlice = createSlice({
     builder.addCase(getAllBlogs.fulfilled, (state, { payload }) => {
       state.blogs = payload?.res || [];
       state.blogCount = payload?.totalcount || 0;
-      // console.log(state.blogCount);
     });
   },
 });

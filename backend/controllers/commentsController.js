@@ -1,20 +1,37 @@
-import { Comment } from "../models/comments";
+import { statusMessages } from "../config/statusMessages.js";
+import { Comment } from "../models/comments.js";
+import { ObjectId } from "mongodb";
 
-const getCommentsOfBlog = async (req, res) => {
-  const { blogId } = req.params;
-  const res = await Comment.aggregate([
-    {
-      $match: {
-        blogId,
-      },
-    },
-    {
-      $group: {
-        _id: "$parentId",
-      },
-    },
-  ]);
-};
 const createComment = async (req, res) => {
-  const { body } = req;
+  try {
+    const { body } = req;
+    console.log(body);
+    const newComment = new Comment({
+      ...body,
+      blogId: new ObjectId(body.blogId),
+      createdBy: new ObjectId(body.createdBy),
+      createdAt: new Date(),
+    });
+    console.log(newComment);
+    await newComment.save();
+    return { ...newComment.toJSON() };
+  } catch (err) {
+    console.log(statusMessages.COMMENT_SAVE_FAILURE, err);
+    throw err;
+  }
 };
+
+const getAllComments = async (req, res) => {
+  try {
+    const { parentId, blogId } = req.query;
+    const response = await Comment.find({
+      parentId: parentId ? new ObjectId(parentId) : null,
+      blogId: blogId ? new ObjectId(blogId) : null,
+    });
+    return response
+  } catch (err) {
+    throw err;
+  }
+};
+
+export { createComment, getAllComments };

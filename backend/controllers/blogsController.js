@@ -1,6 +1,6 @@
 import { statusCodes } from "../config/statusCodes.js";
 import { statusMessages } from "../config/statusMessages.js";
-import { Blog } from "../models/index.js";
+import { Blog, User } from "../models/index.js";
 import { ObjectId } from "mongodb";
 import { base64ToImage } from "../utils/others.js";
 
@@ -220,8 +220,9 @@ const toggleLike = async (req, res) => {
 const getBlogDataById = async (req, res) => {
   try {
     const { blogId } = req.params;
-    const res = await Blog.findById(blogId);
-    return { ...res.toJSON() };
+    const blogRes = await Blog.findById(blogId).populate("createdBy")
+    console.log(blogRes);
+    return { ...blogRes.toJSON() };
   } catch (error) {
     console.log(error, statusMessages.FETCH_SINGLE_BLOG_FAILURE);
     throw error;

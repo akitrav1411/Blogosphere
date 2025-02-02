@@ -22,7 +22,6 @@ router.put(
 );
 router.get(
   "/blogs/:blogId",
-  verifyToken,
   handleResponse.bind(this, getBlogDataById)
 );
 export default router;

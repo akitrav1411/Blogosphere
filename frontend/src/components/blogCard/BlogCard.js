@@ -139,7 +139,7 @@ export const BlogCard = (props) => {
             </div>
 
             <Button
-              onClick={() => navigate(`blog/${blog._id}`)}
+              onClick={() => navigate(`/blog/${blog._id}`)}
               className={classes["read-morebtn"]}
             >
               Read more

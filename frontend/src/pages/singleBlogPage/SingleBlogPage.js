@@ -16,9 +16,7 @@ export const SingleBlogPage = () => {
   const getBlogData = async () => {
     const blogId = location.pathname.split("blog/")[1];
     const blogData = await apiCalling("get", `/blogs/${blogId}`);
-    const blogComments = await apiCalling("get", "/comments", {}, { blogId });
-
-    setBlogData({ ...blogData, blogComments });
+    setBlogData(blogData);
   };
 
   useEffect(() => {
@@ -37,5 +35,15 @@ export const SingleBlogPage = () => {
   //   dispatch(saveCommentToDb({ commentEntry }));
   //   setCommentReply(null);
   // };
-  return <div className="wrapper"></div>;
+  return (
+    <div className="wrapper">
+      <ul>
+        {blogData.blogComments?.map((comment) => (
+          <li>
+            <h3>{comment?.comment}</h3>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };

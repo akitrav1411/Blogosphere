@@ -28,10 +28,21 @@ const getAllComments = async (req, res) => {
       parentId: parentId ? new ObjectId(parentId) : null,
       blogId: blogId ? new ObjectId(blogId) : null,
     });
-    return response
+    return response;
   } catch (err) {
     throw err;
   }
 };
 
-export { createComment, getAllComments };
+const getAllChildComments = async (req, res) => {
+  try {
+   const {commentId}=req.params;
+   const response=await Comment.find({parentId:new ObjectId(commentId)})
+   console.log("res",response)
+   return response
+  } catch (err) {
+    throw err;
+  }
+};
+
+export { createComment, getAllComments,getAllChildComments };

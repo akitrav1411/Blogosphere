@@ -5,6 +5,9 @@ import { statusMessages } from "./config/index.js";
 import cors from "cors";
 import { loadRoutes, logger } from "./utils/index.js";
 import bodyParser from "body-parser";
+import session from "express-session";
+import passport from "passport";
+import "./utils/oauth.js";
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
@@ -25,6 +28,36 @@ connectDB()
     // const upload = multer({ storage: storage });
     app.use(cors(corsOptions));
     app.use(logger);
+
+    app.use(
+      session({
+        secret: "mysecret",
+        resave: false,
+        saveUninitialized: false,
+      })
+    );
+    app.use(passport.initialize());
+    app.use(passport.session());
+    app.get(
+      "/auth/google",
+      passport.authenticate("google", { scope: ["profile", "email"] })
+    );
+
+    app.get(
+      "/auth/google/callback",
+      passport.authenticate("google", {
+        failureRedirect: "/login",
+        // successRedirect: "/profile",
+      }),
+      function (req, res) {
+        // Successful authentication, redirect home.
+        console.log("request", req);
+      }
+    );
+    app.get("/profile", (req, res) => {
+      console.log("res", req.user);
+      res.send(`Welcome`);
+    });
     loadRoutes(app);
     app.listen(port, () => {
       console.log(`server is running on ${port}`);

@@ -222,10 +222,36 @@ const getBlogDataById = async (req, res) => {
   try {
     const { blogId } = req.params;
     const blogRes = await Blog.findById(blogId).populate("createdBy");
-    const blogComments = await Comment.find({
-      blogId: blogId ? new ObjectId(blogId) : null,
-    });
-    return { ...blogRes?.toJSON(), blogComments };
+    // const blogComments = await Comment.find({
+    //   blogId: blogId ? new ObjectId(blogId) : null,
+    // });
+    const blogComments = await Comment.aggregate([
+      {
+        $match: {
+          blogId: blogId ? new ObjectId(blogId) : null,
+          parentId: null,
+        },
+      },
+      {
+        $lookup: {
+          from: "comments",
+          localField: "_id",
+          foreignField: "parentId",
+          as: "children",
+        },
+      },
+      {
+        $addFields: {
+          hasChildren: { $gt: [{ $size: "$children" }, 0] },
+        },
+      },
+      {
+        $project: {
+          children: 0,
+        },
+      },
+    ]);
+    return { blogRes, blogComments };
   } catch (error) {
     console.log(error, statusMessages.FETCH_SINGLE_BLOG_FAILURE);
     throw error;

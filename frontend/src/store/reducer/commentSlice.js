@@ -21,9 +21,10 @@ export const saveCommentToDb = createAsyncThunk(
   "Comments/saveCommentToDb",
   async (object, { rejectWithValue }) => {
     try {
-      const { commentEntry } = object || {};
+      const { commentEntry, onSuccess } = object || {};
       const result = await apiCalling("post", "/comments", commentEntry, null);
       toast.success("Comment saved successfully");
+      if (onSuccess) onSuccess();
     } catch (err) {
       const { response } = err;
       const { data } = response || {};

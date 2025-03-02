@@ -12,7 +12,6 @@ const createComment = async (req, res) => {
       createdBy: new ObjectId(body.createdBy),
       createdAt: new Date(),
     });
-    console.log(newComment);
     await newComment.save();
     return { ...newComment.toJSON() };
   } catch (err) {
@@ -38,7 +37,6 @@ const getAllChildComments = async (req, res) => {
   try {
    const {commentId}=req.params;
    const response=await Comment.find({parentId:new ObjectId(commentId)})
-   console.log("res",response)
    return response
   } catch (err) {
     throw err;
